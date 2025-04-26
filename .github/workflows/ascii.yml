@@ -1,0 +1,18 @@
+on: push
+
+jobs:
+    first-job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout repo
+          uses:  actions/checkout@v4
+
+        - name: list of files
+          run: ls -ltra  
+
+        - name: execute shell script
+          run:  ./ascii-script.sh  
+
+        
+ 
+       
