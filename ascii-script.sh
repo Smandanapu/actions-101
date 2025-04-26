@@ -1,6 +1,6 @@
-# /bin/sh
+#/bin/sh
 sudo apt get install cowsay -y
-cowsay -f cow " i am a milky cow" >> cow.txt
-grep -i "cow" cow.txt
-cat cow.txt
+cowsay -f dragon " run for cover , i am a DRAGON....RAWR"  >> dragon.txt
+grep -i "dragon" dragon.txt
+cat dragon.txt
 ls -ltra
