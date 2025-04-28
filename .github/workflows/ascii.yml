@@ -1,20 +1,40 @@
+name: Genrate Ascii Art work
 on: push
 
 jobs:
-    first-job:
+    build-job:
         runs-on: ubuntu-latest
         steps:
-        - name: checkout repo
-          uses:  actions/checkout@v4
 
-        - name: list of files
-          run: ls -ltra  
+        - name: install cowsay program
+          run: sudo apt-get install cowsay -y
 
-        - name: execute shell script
-          run:  |
-            chmod +x ./ascii-script.sh
-            ./ascii-script.sh  
+        - name: execute cowsay cmd
+          run:  cowsay -f dragon "IAm a dragon .....>> dragon.txt" 
 
+        - name: sleep for 30 sec
+          run:  sleep 30  
+   
+
+    test-job:
+        runs-on : ubuntu-latest
+        steps:
+            
+            - name: sleep for 10 sec
+              run: sleep 10
+
+            - name: test file exists
+              run: grep -i "dragon"  dragon.txt
+
+    deploy-job:
+        runs-on: ubuntu-latest
+        steps:
+            
+            - name: read file
+              run: cat dragon.txt
+
+            - name: deploy
+              run: echo deploying 
         
  
        
